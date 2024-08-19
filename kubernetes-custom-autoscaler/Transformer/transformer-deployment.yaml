@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: haproxy-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: haproxy
+  template:
+    metadata:
+      labels:
+        app: haproxy
+    spec:
+      containers:
+      - name: haproxy
+        image: haproxy:latest
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: haproxy-config
+          mountPath: /usr/local/etc/haproxy/haproxy.cfg
+          subPath: haproxy.cfg
+      volumes:
+      - name: haproxy-config
+        configMap:
+          name: haproxy-config
+(base) bneepunkumar@Bs-MacBook-Air DOCKER % cat transformer-deployment.yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transformer-service
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transformer-service
+  template:
+    metadata:
+      labels:
+        app: transformer-service
+    spec:
+      containers:
+      - name: transformer-service
+        image: neepunkumar/azure-test@sha256:b5a4647dcb187cd963b2f50f9aad586e66d1c133767ab75a41aa0eadabf70e06 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PROMETHEUS_URL
+          value: "http://10.0.238.216:80"
+      tolerations:
+      - key: "CriticalAddonsOnly"
+        operator: "Exists"
+        effect: "NoSchedule"
