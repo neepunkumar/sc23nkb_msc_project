@@ -1,0 +1,10 @@
+Flask
+prometheus_client
+torch
+torchvision
+numpy
+pandas
+kubernetes
+requests
+gunicorn
+scikit-learn
