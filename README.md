@@ -1,8 +1,8 @@
 # sc23nkb_msc_project
 
-SC23NKB_MSC_Project
 
-This repository contains all the resources and code developed as part of the SC23NKB MSc project. The primary focus of this project is the design, development, and evaluation of a custom autoscaler for Kubernetes environments, leveraging advanced machine learning techniques. Below is an overview of the repository structure and the contents of each directory and file.
+
+This repository contains all the resources and code developed as part of the  MSc project. The primary focus of this project is the design, development, and evaluation of a custom autoscaler for Kubernetes environments, leveraging advanced machine learning techniques. Below is an overview of the repository structure and the contents of each directory and file.
 
 Repository Structure
 
@@ -21,15 +21,12 @@ Accompanying scripts or instructions to reproduce the demo environment.
 Description: This directory contains the main implementation of the custom Transformer-based autoscaler. It includes all the necessary files for setting up and running the autoscaler within a Kubernetes environment.
 Contents:
 YAML files for deploying the custom autoscaler.
-Python scripts for model training and deployment.
+Python script(transformer_service.py) for model training and deployment.
 Kubernetes deployment configurations for integrating the custom autoscaler with the cluster.
-Scripts for collecting performance metrics and logs.
 4. teastore-application
-Description: This directory includes the deployment files for the TeaStore application, a microservices-based web application used to simulate real-world traffic and workload patterns in the Kubernetes cluster.
+Description: This directory includes the deployment file for the TeaStore application, a microservices-based web application used to simulate real-world traffic and workload patterns in the Kubernetes cluster.
 Contents:
-YAML files for deploying the TeaStore application in Kubernetes.
-Configuration files for integrating the application with the custom autoscaler.
-Scripts for generating traffic to test the autoscaler.
+YAML file for deploying the TeaStore application in Kubernetes.
 5. Workload_prediction.ipynb
 Description: This Jupyter notebook is used for training and evaluating different machine learning models, including Transformers, LSTM, Bi-LSTM, Random Forest, and SVM, on the web traffic time series dataset. The notebook walks through the data preprocessing, model training, evaluation, and selection of the best model for the custom autoscaler.
 Contents:
