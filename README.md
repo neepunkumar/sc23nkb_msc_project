@@ -53,31 +53,4 @@ Visualizations and metrics for model comparison.
 Description: The merged and preprocessed dataset used for training the machine learning models. This dataset contains historical web traffic data, which is crucial for developing the predictive capabilities of the custom autoscaler.
 Contents:
 Time series data of HTTP requests with timestamps and traffic counts.
-Getting Started
-
-Prerequisites
-Kubernetes Cluster (e.g., on Azure or any other cloud platform).
-Docker.
-Prometheus and Grafana for monitoring.
-Python with dependencies listed in requirements.txt.
-Setup Instructions
-Clone the Repository:
-bash
-Copy code
-git clone https://github.com/yourusername/sc23nkb_msc_project.git
-cd sc23nkb_msc_project
-Deploy the TeaStore Application:
-Navigate to the teastore-application directory and follow the instructions in the README.md to deploy the application in your Kubernetes cluster.
-Deploy the Default HPA:
-Navigate to the default-autoscaler directory and deploy the default Kubernetes HPA for baseline comparison.
-Train and Deploy the Custom Autoscaler:
-Use the Workload_prediction.ipynb notebook to train the Transformer-based model.
-Deploy the trained model using the YAML files provided in the kubernetes-custom-autoscaler/Transformer directory.
-Deploy and Configure HAProxy:
-Navigate to the kubernetes-custom-autoscaler/haproxy directory to deploy and configure HAProxy as a load balancer.
-Monitor and Analyze Performance:
-Use Prometheus and Grafana to monitor the cluster's performance and compare the results of the custom autoscaler with the default HPA.
-Contributing
-
-Feel free to submit issues or pull requests if you find bugs or have suggestions for improvements.
 
