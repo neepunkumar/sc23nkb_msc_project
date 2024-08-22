@@ -17,7 +17,7 @@ Description: Includes a video demonstration of the project's key features, showc
 Contents:
 MSC_Project-demo.mp4: A video file demonstrating the deployment and scaling processes.
 readme.md: Accompanying documentation for the demo video.
-3. kubernetes-custom-autoscaler
+### 3. kubernetes-custom-autoscaler
 Description: This directory contains the implementation of the custom Transformer-based autoscaler. It includes all the necessary files for building, deploying, and running the autoscaler within a Kubernetes environment.
 Contents:
 Transformer:
